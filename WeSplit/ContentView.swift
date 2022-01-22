@@ -15,11 +15,6 @@ struct ContentView: View {
     
     let tipPercentages = [10, 15, 20, 25, 0]
     
-//    var totalPerPerson: Double {
-//        let tipAmount = checkAmount * Double(tipPercentage)
-//        return tipAmount / Double(numberOfPeople)
-//    }
-    
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
         let tipSelection = Double(tipPercentage)
@@ -34,6 +29,9 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section {
+                    Text("My change")
+                }
                 Section {
                     TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
                             .keyboardType(.decimalPad)
